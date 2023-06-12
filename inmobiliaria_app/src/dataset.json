@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Property 1",
+        "imgURL": "https://example.com/property1.jpg",
+        "rating": 4,
+        "address": "123 Main St",
+        "rooms": 3,
+        "bathrooms": 2,
+        "area": 1200,
+        "price": 250000
+    },
+    {
+        "name": "Property 2",
+        "imgURL": "https://example.com/property2.jpg",
+        "rating": 3,
+        "address": "456 Elm St",
+        "rooms": 4,
+        "bathrooms": 3,
+        "area": 1800,
+        "price": 350000
+    },
+    {
+        "name": "Property 3",
+        "imgURL": "https://example.com/property3.jpg",
+        "rating": 5,
+        "address": "789 Oak St",
+        "rooms": 2,
+        "bathrooms": 1,
+        "area": 800,
+        "price": 200000
+    },
+    {
+        "name": "Property 4",
+        "imgURL": "https://example.com/property4.jpg",
+        "rating": 5,
+        "address": "321 Maple Ave",
+        "rooms": 5,
+        "bathrooms": 4,
+        "area": 2500,
+        "price": 450000
+    },
+    {
+        "name": "Property 5",
+        "imgURL": "https://example.com/property5.jpg",
+        "rating": 4,
+        "address": "654 Pine St",
+        "rooms": 2,
+        "bathrooms": 1,
+        "area": 900,
+        "price": 180000
+    },
+    {
+        "name": "Property 6",
+        "imgURL": "https://example.com/property6.jpg",
+        "rating": 3,
+        "address": "987 Cedar St",
+        "rooms": 3,
+        "bathrooms": 2,
+        "area": 1300,
+        "price": 280000
+    },
+    {
+        "name": "Property 7",
+        "imgURL": "https://example.com/property7.jpg",
+        "rating": 4,
+        "address": "246 Walnut Ave",
+        "rooms": 4,
+        "bathrooms": 3,
+        "area": 1700,
+        "price": 320000
+    },
+    {
+        "name": "Property 8",
+        "imgURL": "https://example.com/property8.jpg",
+        "rating": 5,
+        "address": "135 Spruce St",
+        "rooms": 3,
+        "bathrooms": 2,
+        "area": 1100,
+        "price": 240000
+    },
+    {
+        "name": "Property 9",
+        "imgURL": "https://example.com/property9.jpg",
+        "rating": 3,
+        "address": "864 Birch Ave",
+        "rooms": 2,
+        "bathrooms": 1,
+        "area": 950,
+        "price": 195000
+    },
+    {
+        "name": "Property 10",
+        "imgURL": "https://example.com/property10.jpg",
+        "rating": 4,
+        "address": "579 Oak St",
+        "rooms": 4,
+        "bathrooms": 3,
+        "area": 2000,
+        "price": 380000
+    }
+]
