@@ -1,16 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import {
     View,
     Text,
     StyleSheet,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faBed, faMapLocationDot, faToilet, faRulerCombined } from '@fortawesome/free-solid-svg-icons';
-
-import ImgContainer from './ImgContainer';
+import { faBed, faMapLocationDot, faToilet, faRulerCombined, faStar, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 interface CardProps {
     title: string;
@@ -20,17 +19,35 @@ interface CardProps {
     area: number;
     rating: number;
     price: number;
+    image: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, address, rooms, bathrooms, area, rating, price }) => {
+const Card: React.FC<CardProps> = ({ title, address, rooms, bathrooms, area, rating, price, image }) => {
+
+    const [like, setLike] = useState(false);
+    const [likeColor, setLikeColor] = useState('#ffffff');
+
+    const handleLike = () => {
+        setLike(!like);
+        if(like) {
+            setLikeColor('#ffffff');
+        } else {
+            setLikeColor('#ed2d5d');
+        }
+    }
+
     return (
-        <View style={styles.card}>
+        <View testID='flatListItem' style={styles.card}>
             <View style={styles.row}>
                 <View style={styles.container}>
                     <Image
-                        source={require('../real_state.jpg')}
+                        source={{uri: image}}
                         style={styles.image}
                     />
+                    <View style={[styles.row, styles.rowRating]}>
+                        <FontAwesomeIcon size={25} icon={faStar} style={styles.starIcon} />
+                        <Text style={styles.price}>{rating}</Text>
+                    </View>
                 </View>
                 <View style={styles.column}>
                     <Text style={styles.title}>{title}</Text>
@@ -52,8 +69,15 @@ const Card: React.FC<CardProps> = ({ title, address, rooms, bathrooms, area, rat
                             <Text style={styles.data}>{`${area} m2`}</Text>
                         </View>
                     </View>         
-                    <View style={[styles.row, styles.bottomRow]}>
+                    <View style={styles.bottomRow}>
                         <Text style={styles.price}>{`$${price.toString().substring(0,3)}/m2`}</Text>
+                        <TouchableOpacity 
+                            style={styles.likeButton}
+                            onPress={() => handleLike()}
+                            testID='likeBtn'
+                        >
+                            <FontAwesomeIcon testID='likeIcon' icon={faHeart} style={{color: likeColor}} />
+                        </TouchableOpacity>
                     </View>          
                 </View>
             </View>
@@ -78,11 +102,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     iconsRow: {
-        width: '65%',
+        width: '50%',
         justifyContent: 'space-between'
     },
     bottomRow: {
-        width: '65%',
+        flexDirection: 'row',
+        width: '60%',
         justifyContent: 'space-between'
     },
     icons: {
@@ -91,12 +116,12 @@ const styles = StyleSheet.create({
     },
     title: {
         marginBottom: 8,
-        fontSize: 18,
+        fontSize: 24,
         color: '#151525',
         fontWeight: '600'
     },
     price: {
-        fontSize: 18,
+        fontSize: 20,
         color: '#151525',
         fontWeight: '800'
     },
@@ -123,6 +148,25 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         borderRadius: 10
+    },
+    rowRating: {
+        position: 'absolute',
+        alignSelf: 'center',
+        marginTop: 80,
+        backgroundColor: '#FBEDB7',
+        padding: 7,
+        borderRadius: 20
+    },
+    starIcon: {
+        color: '#EEBA00',
+        marginRight: 5
+    },
+    likeButton: {
+        backgroundColor: '#00B074',
+        borderRadius: 50,
+        width: 30,
+        height: 30,
+        padding: 7
     },
 });
 
