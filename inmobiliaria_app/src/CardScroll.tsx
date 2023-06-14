@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-    View,
     FlatList
 } from 'react-native';
 
@@ -11,6 +10,7 @@ import Card from './components/Card';
 const CardScroll = () => {
     return (
             <FlatList
+                testID='list'
                 data={data}
                 keyExtractor={(_item, index) => index.toString()}
                 renderItem={({ item }) =>(
@@ -22,6 +22,7 @@ const CardScroll = () => {
                         rooms={item.rooms}
                         rating={item.rating}
                         price={item.price}
+                        image={item.imgURL}
                     />
                 )}
             />
